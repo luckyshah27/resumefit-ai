@@ -162,3 +162,5 @@ Rule-based section detection can mis-read unusual layouts; scanned resumes are r
 [Abstract](docs/abstract.md) · [Problem statement](docs/problem-statement.md) · [Objectives](docs/objectives.md) · [Existing system](docs/existing-system.md) · [Proposed system](docs/proposed-system.md) · [Architecture](docs/architecture.md) · [Database](docs/database.md) · [API](docs/api.md) · [Scoring](docs/scoring.md) · [AI pipeline](docs/ai-pipeline.md) · [Research](docs/research.md) · [Testing](docs/testing.md) · [Security](docs/security.md) · [Deployment](docs/deployment.md) · [Limitations](docs/limitations.md) · [Future scope](docs/future-scope.md) · [Screenshots](docs/screenshots/)
 
 All resumes, job descriptions and research data in this repository are synthetic.
+# resumefit-ai
+Explainable AI-based, job-specific resume evaluation, gap analysis, optimization and interview preparation platform for final-year students.
