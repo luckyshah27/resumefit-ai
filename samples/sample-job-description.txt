@@ -1,0 +1,24 @@
+Junior Backend Developer - Northwind Payments
+
+About the role
+Northwind Payments is hiring a Junior Backend Developer to build APIs for our fintech platform. Freshers and final-year students are welcome to apply.
+
+Responsibilities
+- Design and build REST APIs in Go for payment and settlement services
+- Model data and write efficient queries in PostgreSQL
+- Use Redis for caching and rate limiting
+- Package and run services with Docker
+- Write unit tests and take part in code reviews
+
+Requirements
+- 0-2 years of experience
+- B.Tech/B.E. in Computer Science or a related field
+- Go (Golang)
+- REST API design
+- PostgreSQL
+- Redis
+- Docker
+
+Nice to have
+- Kafka
+- AWS

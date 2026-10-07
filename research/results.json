@@ -1,0 +1,3353 @@
+{
+  "generatedAt": "2026-10-07T12:25:47.563Z",
+  "durationMs": 4259,
+  "scoringVersion": "2.1.0",
+  "datasetVersion": "1.0.0",
+  "config": {
+    "methods": [
+      "keyword",
+      "tfidf",
+      "embedding",
+      "ontology"
+    ],
+    "fixedThresholds": {
+      "tfidf": 0.35,
+      "embedding": 0.6
+    },
+    "thresholdGrid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "ranking": {
+      "ndcgK": [
+        3,
+        5
+      ],
+      "precisionK": 2,
+      "relevantGrade": 2,
+      "preferredWeight": 0.5
+    },
+    "bootstrap": {
+      "iterations": 1000,
+      "seed": 42
+    }
+  },
+  "results": {
+    "dataset": {
+      "version": "1.0.0",
+      "description": "Synthetic, hand-authored and hand-labeled evaluation dataset of 6 job descriptions and 10 resumes for fresher/early-career tech roles; it is intentionally small, and all requirement-presence and relevance labels were authored by the project developer independently of any matching method.",
+      "jobs": 6,
+      "resumes": 10,
+      "requirementExamples": 470,
+      "positives": 144,
+      "relevancePairs": 60
+    },
+    "classification": [
+      {
+        "method": "keyword",
+        "label": "A. Keyword matching",
+        "mode": "direct",
+        "metrics": {
+          "tp": 107,
+          "fp": 1,
+          "fn": 37,
+          "tn": 325,
+          "precision": 0.9907407407407407,
+          "recall": 0.7430555555555556,
+          "f1": 0.8492063492063493,
+          "accuracy": 0.9191489361702128,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.7982456140350876,
+          "high": 0.8928571428571428
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 76,
+            "fp": 1,
+            "fn": 26,
+            "tn": 187,
+            "precision": 0.987012987012987,
+            "recall": 0.7450980392156863,
+            "f1": 0.8491620111731845,
+            "accuracy": 0.906896551724138,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 31,
+            "fp": 0,
+            "fn": 11,
+            "tn": 138,
+            "precision": 1,
+            "recall": 0.7380952380952381,
+            "f1": 0.8493150684931507,
+            "accuracy": 0.9388888888888889,
+            "support": 42
+          }
+        }
+      },
+      {
+        "method": "ontology",
+        "label": "RESUMEFIT ontology engine",
+        "mode": "direct",
+        "metrics": {
+          "tp": 140,
+          "fp": 5,
+          "fn": 4,
+          "tn": 321,
+          "precision": 0.9655172413793104,
+          "recall": 0.9722222222222222,
+          "f1": 0.9688581314878894,
+          "accuracy": 0.9808510638297873,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.9473684210526316,
+          "high": 0.9874999999999999
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 100,
+            "fp": 5,
+            "fn": 2,
+            "tn": 183,
+            "precision": 0.9523809523809523,
+            "recall": 0.9803921568627451,
+            "f1": 0.966183574879227,
+            "accuracy": 0.9758620689655172,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 40,
+            "fp": 0,
+            "fn": 2,
+            "tn": 138,
+            "precision": 1,
+            "recall": 0.9523809523809523,
+            "f1": 0.975609756097561,
+            "accuracy": 0.9888888888888889,
+            "support": 42
+          }
+        }
+      },
+      {
+        "method": "tfidf",
+        "label": "B. TF-IDF similarity",
+        "mode": "fixed-threshold",
+        "thresholds": 0.35,
+        "metrics": {
+          "tp": 106,
+          "fp": 1,
+          "fn": 38,
+          "tn": 325,
+          "precision": 0.9906542056074766,
+          "recall": 0.7361111111111112,
+          "f1": 0.8446215139442232,
+          "accuracy": 0.9170212765957447,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.7955390334572491,
+          "high": 0.8872180451127819
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 74,
+            "fp": 1,
+            "fn": 28,
+            "tn": 187,
+            "precision": 0.9866666666666667,
+            "recall": 0.7254901960784313,
+            "f1": 0.8361581920903954,
+            "accuracy": 0.9,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 10,
+            "tn": 138,
+            "precision": 1,
+            "recall": 0.7619047619047619,
+            "f1": 0.8648648648648648,
+            "accuracy": 0.9444444444444444,
+            "support": 42
+          }
+        }
+      },
+      {
+        "method": "tfidf",
+        "label": "B. TF-IDF similarity",
+        "mode": "cross-validated",
+        "thresholds": {
+          "jd-frontend": 0.05,
+          "jd-backend-node": 0.05,
+          "jd-data-analyst": 0.05,
+          "jd-java-backend": 0.05,
+          "jd-ml-intern": 0.05,
+          "jd-devops-intern": 0.05
+        },
+        "metrics": {
+          "tp": 129,
+          "fp": 8,
+          "fn": 15,
+          "tn": 318,
+          "precision": 0.9416058394160584,
+          "recall": 0.8958333333333334,
+          "f1": 0.9181494661921709,
+          "accuracy": 0.951063829787234,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.8821548821548822,
+          "high": 0.9517241379310345
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 92,
+            "fp": 5,
+            "fn": 10,
+            "tn": 183,
+            "precision": 0.9484536082474226,
+            "recall": 0.9019607843137255,
+            "f1": 0.9246231155778893,
+            "accuracy": 0.9482758620689655,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 37,
+            "fp": 3,
+            "fn": 5,
+            "tn": 135,
+            "precision": 0.925,
+            "recall": 0.8809523809523809,
+            "f1": 0.9024390243902439,
+            "accuracy": 0.9555555555555556,
+            "support": 42
+          }
+        }
+      },
+      {
+        "method": "embedding",
+        "label": "C. Semantic embeddings (MiniLM)",
+        "mode": "fixed-threshold",
+        "thresholds": 0.6,
+        "metrics": {
+          "tp": 117,
+          "fp": 4,
+          "fn": 27,
+          "tn": 322,
+          "precision": 0.9669421487603306,
+          "recall": 0.8125,
+          "f1": 0.8830188679245283,
+          "accuracy": 0.9340425531914893,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.8398268398268398,
+          "high": 0.9201520912547528
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 81,
+            "fp": 4,
+            "fn": 21,
+            "tn": 184,
+            "precision": 0.9529411764705882,
+            "recall": 0.7941176470588235,
+            "f1": 0.8663101604278074,
+            "accuracy": 0.9137931034482759,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 36,
+            "fp": 0,
+            "fn": 6,
+            "tn": 138,
+            "precision": 1,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "accuracy": 0.9666666666666667,
+            "support": 42
+          }
+        }
+      },
+      {
+        "method": "embedding",
+        "label": "C. Semantic embeddings (MiniLM)",
+        "mode": "cross-validated",
+        "thresholds": {
+          "jd-frontend": 0.5,
+          "jd-backend-node": 0.5,
+          "jd-data-analyst": 0.55,
+          "jd-java-backend": 0.5,
+          "jd-ml-intern": 0.45,
+          "jd-devops-intern": 0.5
+        },
+        "metrics": {
+          "tp": 130,
+          "fp": 17,
+          "fn": 14,
+          "tn": 309,
+          "precision": 0.8843537414965986,
+          "recall": 0.9027777777777778,
+          "f1": 0.8934707903780069,
+          "accuracy": 0.9340425531914893,
+          "support": 144
+        },
+        "f1Ci95": {
+          "low": 0.8540145985401459,
+          "high": 0.9295774647887323
+        },
+        "byImportance": {
+          "mandatory": {
+            "tp": 89,
+            "fp": 16,
+            "fn": 13,
+            "tn": 172,
+            "precision": 0.8476190476190476,
+            "recall": 0.8725490196078431,
+            "f1": 0.8599033816425121,
+            "accuracy": 0.9,
+            "support": 102
+          },
+          "preferred": {
+            "tp": 41,
+            "fp": 1,
+            "fn": 1,
+            "tn": 137,
+            "precision": 0.9761904761904762,
+            "recall": 0.9761904761904762,
+            "f1": 0.9761904761904762,
+            "accuracy": 0.9888888888888889,
+            "support": 42
+          }
+        }
+      }
+    ],
+    "ranking": [
+      {
+        "method": "keyword",
+        "label": "A. Keyword coverage",
+        "ndcg": {
+          "@3": 0.969094533717309,
+          "@5": 0.9355963618695949
+        },
+        "precisionAtK": 0.9166666666666666,
+        "mrr": 0.9166666666666666,
+        "map": 0.9305555555555555,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.692,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.615,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.462,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.308,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.8145672023038535
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.615,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.462,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.231,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.231,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.231,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.231,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-03",
+                "score": 0.75,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.667,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.417,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.333,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.167,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.167,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-04",
+                "score": 0.692,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.692,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.308,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.154,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.154,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.154,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-05",
+                "score": 0.833,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.583,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.333,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.333,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.25,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.167,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.083,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.083,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.083,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.692,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.308,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.154,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          }
+        ]
+      },
+      {
+        "method": "tfidf-doc",
+        "label": "B. TF-IDF (JD ↔ resume)",
+        "ndcg": {
+          "@3": 0.9610016435485015,
+          "@5": 0.9876221632370669
+        },
+        "precisionAtK": 0.9166666666666666,
+        "mrr": 1,
+        "map": 0.9722222222222222,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-01",
+                "score": 0.147,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.142,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.121,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.078,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.061,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.058,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.056,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.045,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.041,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.021,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9514426589871553
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.133,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.118,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.088,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.077,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.061,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.051,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.035,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.033,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.029,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.027,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-03",
+                "score": 0.293,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.133,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.061,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.041,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.027,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.026,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.024,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.019,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.012,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.008,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-04",
+                "score": 0.219,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.114,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.084,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.075,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.067,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.045,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.044,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.033,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.026,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.017,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-05",
+                "score": 0.191,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.131,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.04,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.032,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.031,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.031,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.028,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.027,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.026,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.019,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.199,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.137,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.049,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.022,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.021,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.019,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.012,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.012,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.01,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.009,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          }
+        ]
+      },
+      {
+        "method": "tfidf-req",
+        "label": "B. TF-IDF (per requirement)",
+        "ndcg": {
+          "@3": 0.914643444124465,
+          "@5": 0.9562036481107193
+        },
+        "precisionAtK": 0.8333333333333334,
+        "mrr": 0.9166666666666666,
+        "map": 0.8888888888888888,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.663,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.569,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.32,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.308,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.194,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.173,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.089,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.8145672023038535
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.652,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.268,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.262,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.261,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.246,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.175,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.094,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.7660098612910087
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-10",
+                "score": 0.655,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.606,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.374,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.333,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.167,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.132,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.708,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.605,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.183,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.175,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.172,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.094,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.085,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.077,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-05",
+                "score": 0.729,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.59,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.333,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.333,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.25,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.167,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.083,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.083,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.039,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.007,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.543,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.281,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.154,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.086,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.052,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          }
+        ]
+      },
+      {
+        "method": "embedding-doc",
+        "label": "C. Embeddings (JD ↔ resume)",
+        "ndcg": {
+          "@3": 0.9098639518437918,
+          "@5": 0.938615175530535
+        },
+        "precisionAtK": 0.75,
+        "mrr": 1,
+        "map": 0.9166666666666666,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-01",
+                "score": 0.686,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.663,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.647,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.642,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.592,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.57,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.506,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.462,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.447,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.311,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.8344475896326595
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-02",
+                "score": 0.703,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.672,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.625,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.583,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.563,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.527,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.441,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.389,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.37,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.243,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9514426589871553
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-03",
+                "score": 0.74,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.618,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.573,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.431,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.371,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.342,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.338,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.304,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.301,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.291,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-04",
+                "score": 0.766,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.655,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.641,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.451,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.45,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.448,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.419,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.411,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.391,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.256,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9514426589871553
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-10",
+                "score": 0.6,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.551,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.497,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.481,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.461,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.437,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.437,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.433,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.413,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.334,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.76,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.653,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.46,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.425,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.408,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.392,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.391,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.342,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.268,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.266,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          }
+        ]
+      },
+      {
+        "method": "embedding-req",
+        "label": "C. Embeddings (per requirement)",
+        "ndcg": {
+          "@3": 0.9536418005759634,
+          "@5": 0.9669520604202461
+        },
+        "precisionAtK": 0.9166666666666666,
+        "mrr": 0.9166666666666666,
+        "map": 0.9305555555555555,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.788,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.763,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.711,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.486,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.427,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.415,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.397,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.381,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.38,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.271,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.8145672023038535
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-08",
+                "score": 0.776,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.704,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.563,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.559,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.502,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.45,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.433,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.356,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.295,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.26,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-10",
+                "score": 0.824,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.757,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.601,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.59,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.527,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.508,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.346,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.316,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.315,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.308,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.83,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.806,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.523,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.501,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.463,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.444,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.415,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.409,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.394,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.379,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-05",
+                "score": 0.865,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.766,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 0.63,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.605,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.596,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.411,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.367,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.357,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.353,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.346,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 0.776,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 0.635,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 0.458,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 0.394,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 0.369,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 0.349,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 0.332,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 0.322,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 0.321,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 0.28,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          }
+        ]
+      },
+      {
+        "method": "ontology-jobfit",
+        "label": "RESUMEFIT Job Fit score",
+        "ndcg": {
+          "@3": 0.969094533717309,
+          "@5": 0.9844389988702181
+        },
+        "precisionAtK": 1,
+        "mrr": 1,
+        "map": 1,
+        "perJob": [
+          {
+            "jobId": "jd-frontend",
+            "ranking": [
+              {
+                "resumeId": "res-01",
+                "score": 79.2,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 69.2,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-08",
+                "score": 54.5,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 29.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 24.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 23.4,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 22.7,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 19.8,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 11.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 1.5,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-backend-node",
+            "ranking": [
+              {
+                "resumeId": "res-02",
+                "score": 69.7,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-08",
+                "score": 67.4,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-04",
+                "score": 63,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 47.9,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-06",
+                "score": 36.8,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-01",
+                "score": 24.4,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 21.5,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 20.7,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 6.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 2.2,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-data-analyst",
+            "ranking": [
+              {
+                "resumeId": "res-03",
+                "score": 74.4,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 72.1,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-05",
+                "score": 32.2,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-09",
+                "score": 20.5,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-07",
+                "score": 18.6,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-06",
+                "score": 12.2,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 3.5,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 3.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 2.2,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 1.1,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          },
+          {
+            "jobId": "jd-java-backend",
+            "ranking": [
+              {
+                "resumeId": "res-04",
+                "score": 78.8,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 43.5,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-01",
+                "score": 42,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 41.1,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 39.4,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-02",
+                "score": 24.2,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-10",
+                "score": 19.2,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 18.9,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 15.4,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 11.1,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-ml-intern",
+            "ranking": [
+              {
+                "resumeId": "res-05",
+                "score": 90.5,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-10",
+                "score": 68.6,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-06",
+                "score": 28.8,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 25.1,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-07",
+                "score": 18.9,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-04",
+                "score": 16.2,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 9.9,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 9,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-02",
+                "score": 6.4,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 1.1,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 0.9072836011519267
+          },
+          {
+            "jobId": "jd-devops-intern",
+            "ranking": [
+              {
+                "resumeId": "res-06",
+                "score": 76,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-07",
+                "score": 75.7,
+                "relevance": 2
+              },
+              {
+                "resumeId": "res-02",
+                "score": 20.7,
+                "relevance": 1
+              },
+              {
+                "resumeId": "res-04",
+                "score": 19.3,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-05",
+                "score": 16.7,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-01",
+                "score": 7.6,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-03",
+                "score": 7.6,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-08",
+                "score": 7.6,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-09",
+                "score": 7.6,
+                "relevance": 0
+              },
+              {
+                "resumeId": "res-10",
+                "score": 7.6,
+                "relevance": 0
+              }
+            ],
+            "ndcg3": 1
+          }
+        ]
+      }
+    ],
+    "thresholdSweep": {
+      "tfidf": [
+        {
+          "threshold": 0.05,
+          "precision": 0.9416058394160584,
+          "recall": 0.8958333333333334,
+          "f1": 0.9181494661921709
+        },
+        {
+          "threshold": 0.1,
+          "precision": 0.9473684210526315,
+          "recall": 0.875,
+          "f1": 0.9097472924187725
+        },
+        {
+          "threshold": 0.15,
+          "precision": 0.9754098360655737,
+          "recall": 0.8263888888888888,
+          "f1": 0.8947368421052632
+        },
+        {
+          "threshold": 0.2,
+          "precision": 0.9826086956521739,
+          "recall": 0.7847222222222222,
+          "f1": 0.8725868725868725
+        },
+        {
+          "threshold": 0.25,
+          "precision": 0.9824561403508771,
+          "recall": 0.7777777777777778,
+          "f1": 0.8682170542635659
+        },
+        {
+          "threshold": 0.3,
+          "precision": 0.9907407407407407,
+          "recall": 0.7430555555555556,
+          "f1": 0.8492063492063493
+        },
+        {
+          "threshold": 0.35,
+          "precision": 0.9906542056074766,
+          "recall": 0.7361111111111112,
+          "f1": 0.8446215139442232
+        },
+        {
+          "threshold": 0.4,
+          "precision": 0.9904761904761905,
+          "recall": 0.7222222222222222,
+          "f1": 0.8353413654618473
+        },
+        {
+          "threshold": 0.45,
+          "precision": 0.9902912621359223,
+          "recall": 0.7083333333333334,
+          "f1": 0.825910931174089
+        },
+        {
+          "threshold": 0.5,
+          "precision": 0.9893617021276596,
+          "recall": 0.6458333333333334,
+          "f1": 0.7815126050420168
+        },
+        {
+          "threshold": 0.55,
+          "precision": 1,
+          "recall": 0.5902777777777778,
+          "f1": 0.7423580786026202
+        },
+        {
+          "threshold": 0.6,
+          "precision": 1,
+          "recall": 0.5416666666666666,
+          "f1": 0.7027027027027027
+        },
+        {
+          "threshold": 0.65,
+          "precision": 1,
+          "recall": 0.5416666666666666,
+          "f1": 0.7027027027027027
+        },
+        {
+          "threshold": 0.7,
+          "precision": 1,
+          "recall": 0.5416666666666666,
+          "f1": 0.7027027027027027
+        },
+        {
+          "threshold": 0.75,
+          "precision": 1,
+          "recall": 0.5347222222222222,
+          "f1": 0.6968325791855203
+        },
+        {
+          "threshold": 0.8,
+          "precision": 1,
+          "recall": 0.5347222222222222,
+          "f1": 0.6968325791855203
+        },
+        {
+          "threshold": 0.85,
+          "precision": 1,
+          "recall": 0.5347222222222222,
+          "f1": 0.6968325791855203
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1,
+          "recall": 0.5347222222222222,
+          "f1": 0.6968325791855203
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1,
+          "recall": 0.5347222222222222,
+          "f1": 0.6968325791855203
+        }
+      ],
+      "embedding": [
+        {
+          "threshold": 0.05,
+          "precision": 0.30638297872340425,
+          "recall": 1,
+          "f1": 0.46905537459283386
+        },
+        {
+          "threshold": 0.1,
+          "precision": 0.30638297872340425,
+          "recall": 1,
+          "f1": 0.46905537459283386
+        },
+        {
+          "threshold": 0.15,
+          "precision": 0.3076923076923077,
+          "recall": 1,
+          "f1": 0.47058823529411764
+        },
+        {
+          "threshold": 0.2,
+          "precision": 0.3207126948775056,
+          "recall": 1,
+          "f1": 0.48566610455311976
+        },
+        {
+          "threshold": 0.25,
+          "precision": 0.35910224438902744,
+          "recall": 1,
+          "f1": 0.5284403669724771
+        },
+        {
+          "threshold": 0.3,
+          "precision": 0.40336134453781514,
+          "recall": 1,
+          "f1": 0.5748502994011977
+        },
+        {
+          "threshold": 0.35,
+          "precision": 0.5335820895522388,
+          "recall": 0.9930555555555556,
+          "f1": 0.6941747572815535
+        },
+        {
+          "threshold": 0.4,
+          "precision": 0.715,
+          "recall": 0.9930555555555556,
+          "f1": 0.8313953488372092
+        },
+        {
+          "threshold": 0.45,
+          "precision": 0.8484848484848485,
+          "recall": 0.9722222222222222,
+          "f1": 0.9061488673139159
+        },
+        {
+          "threshold": 0.5,
+          "precision": 0.9166666666666666,
+          "recall": 0.9166666666666666,
+          "f1": 0.9166666666666666
+        },
+        {
+          "threshold": 0.55,
+          "precision": 0.9407407407407408,
+          "recall": 0.8819444444444444,
+          "f1": 0.9103942652329748
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.9669421487603306,
+          "recall": 0.8125,
+          "f1": 0.8830188679245283
+        },
+        {
+          "threshold": 0.65,
+          "precision": 0.9826086956521739,
+          "recall": 0.7847222222222222,
+          "f1": 0.8725868725868725
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.990909090909091,
+          "recall": 0.7569444444444444,
+          "f1": 0.858267716535433
+        },
+        {
+          "threshold": 0.75,
+          "precision": 1,
+          "recall": 0.7291666666666666,
+          "f1": 0.8433734939759037
+        },
+        {
+          "threshold": 0.8,
+          "precision": 1,
+          "recall": 0.6458333333333334,
+          "f1": 0.7848101265822784
+        },
+        {
+          "threshold": 0.85,
+          "precision": 1,
+          "recall": 0.5625,
+          "f1": 0.72
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1,
+          "recall": 0.5208333333333334,
+          "f1": 0.684931506849315
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1,
+          "recall": 0.5138888888888888,
+          "f1": 0.6788990825688073
+        }
+      ]
+    },
+    "errors": {
+      "keyword": [
+        {
+          "jobId": "jd-frontend",
+          "phrase": "React",
+          "resumeId": "res-08",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "JavaScript",
+          "resumeId": "res-01",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "HTML and CSS",
+          "resumeId": "res-01",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-01",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-08",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Node.js",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-08",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "MongoDB",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Postgres",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Postgres",
+          "resumeId": "res-10",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Docker",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "Microsoft Excel",
+          "resumeId": "res-03",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "Microsoft Excel",
+          "resumeId": "res-09",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "Microsoft Excel",
+          "resumeId": "res-10",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        }
+      ],
+      "ontology": [
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-04",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-06",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-07",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 1
+        }
+      ],
+      "tfidf": [
+        {
+          "jobId": "jd-frontend",
+          "phrase": "React",
+          "resumeId": "res-08",
+          "label": false,
+          "predicted": true,
+          "score": 0.506
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "JavaScript",
+          "resumeId": "res-01",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-04",
+          "label": false,
+          "predicted": true,
+          "score": 0.122
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-06",
+          "label": false,
+          "predicted": true,
+          "score": 0.259
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Node.js",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 0.145
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "MongoDB",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Postgres",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Postgres",
+          "resumeId": "res-10",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "JWT authentication",
+          "resumeId": "res-08",
+          "label": false,
+          "predicted": true,
+          "score": 0.191
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Docker",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 0.145
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "scikit-learn",
+          "resumeId": "res-05",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "Deep Learning",
+          "resumeId": "res-09",
+          "label": false,
+          "predicted": true,
+          "score": 0.09
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "Docker",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "Docker",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "Kubernetes",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "CI/CD pipelines",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "Linux",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "Bash scripting",
+          "resumeId": "res-05",
+          "label": false,
+          "predicted": true,
+          "score": 0.131
+        },
+        {
+          "jobId": "jd-devops-intern",
+          "phrase": "GoLang",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0
+        }
+      ],
+      "embedding": [
+        {
+          "jobId": "jd-frontend",
+          "phrase": "React",
+          "resumeId": "res-08",
+          "label": false,
+          "predicted": true,
+          "score": 0.74
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "JavaScript",
+          "resumeId": "res-09",
+          "label": false,
+          "predicted": true,
+          "score": 0.54
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "REST API integration",
+          "resumeId": "res-02",
+          "label": true,
+          "predicted": false,
+          "score": 0.491
+        },
+        {
+          "jobId": "jd-frontend",
+          "phrase": "Redux",
+          "resumeId": "res-07",
+          "label": false,
+          "predicted": true,
+          "score": 0.559
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Node.js",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 0.525
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "Node.js",
+          "resumeId": "res-10",
+          "label": false,
+          "predicted": true,
+          "score": 0.564
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 0.621
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0.49
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0.496
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0.441
+        },
+        {
+          "jobId": "jd-backend-node",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-08",
+          "label": true,
+          "predicted": false,
+          "score": 0.489
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "SQL",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0.509
+        },
+        {
+          "jobId": "jd-data-analyst",
+          "phrase": "Microsoft Excel",
+          "resumeId": "res-03",
+          "label": true,
+          "predicted": false,
+          "score": 0.514
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-01",
+          "label": false,
+          "predicted": true,
+          "score": 0.621
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-04",
+          "label": true,
+          "predicted": false,
+          "score": 0.49
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-06",
+          "label": true,
+          "predicted": false,
+          "score": 0.496
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-07",
+          "label": true,
+          "predicted": false,
+          "score": 0.441
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "RESTful APIs",
+          "resumeId": "res-08",
+          "label": true,
+          "predicted": false,
+          "score": 0.489
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "MySQL",
+          "resumeId": "res-04",
+          "label": false,
+          "predicted": true,
+          "score": 0.547
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "MySQL",
+          "resumeId": "res-07",
+          "label": false,
+          "predicted": true,
+          "score": 0.687
+        },
+        {
+          "jobId": "jd-java-backend",
+          "phrase": "MySQL",
+          "resumeId": "res-10",
+          "label": false,
+          "predicted": true,
+          "score": 0.519
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "PyTorch",
+          "resumeId": "res-03",
+          "label": false,
+          "predicted": true,
+          "score": 0.456
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "PyTorch",
+          "resumeId": "res-10",
+          "label": false,
+          "predicted": true,
+          "score": 0.486
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "scikit-learn",
+          "resumeId": "res-03",
+          "label": false,
+          "predicted": true,
+          "score": 0.458
+        },
+        {
+          "jobId": "jd-ml-intern",
+          "phrase": "scikit-learn",
+          "resumeId": "res-06",
+          "label": false,
+          "predicted": true,
+          "score": 0.456
+        }
+      ]
+    },
+    "unavailable": [],
+    "embeddingModel": "Xenova/all-MiniLM-L6-v2",
+    "notes": [
+      "Requirement detection: each (JD requirement, resume) pair is a binary example; precision/recall/F1 are computed over all pairs.",
+      "TF-IDF and embedding scores are the maximum cosine similarity between the requirement phrase and any resume line or comma-separated segment.",
+      "Cross-validated rows choose the threshold on five jobs and evaluate on the held-out sixth (leave-one-job-out), so no threshold is tuned on the data it is scored on. Fixed-threshold rows use the thresholds declared in the configuration.",
+      "Ranking: each job ranks all 10 resumes; nDCG uses graded relevance (0/1/2); P@k, MRR and MAP treat relevance ≥ 2 as relevant.",
+      "The 95% interval is a seeded percentile bootstrap over requirement examples.",
+      "The dataset is small and synthetic, so results show relative behaviour, not production accuracy. The ontology was written before the dataset, but by the same author."
+    ]
+  }
+}

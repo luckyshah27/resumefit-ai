@@ -1,0 +1,25 @@
+Junior Full Stack Developer - Acme Fintech
+
+About the role
+We are hiring a Junior Full Stack Developer to build payment dashboards for our fintech platform.
+
+Responsibilities
+- Build responsive web interfaces using React and TypeScript
+- Design and develop RESTful APIs with Node.js and Express
+- Write efficient queries and schema migrations for PostgreSQL
+- Write unit tests and participate in code reviews
+- Collaborate with product and design teams in an Agile environment
+
+Requirements
+- 0-2 years of experience
+- B.Tech/B.E. in Computer Science or related field
+- Strong knowledge of JavaScript, TypeScript and React
+- Experience with Node.js, Express and RESTful APIs
+- Hands-on experience with Postgres
+- Experience with GoLang for backend services
+- Proficiency with Git
+
+Nice to have
+- Docker and AWS
+- Experience with Redis caching
+- GraphQL

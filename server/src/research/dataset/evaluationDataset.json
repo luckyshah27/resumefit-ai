@@ -1,0 +1,3649 @@
+{
+  "version": "1.0.0",
+  "description": "Synthetic, hand-authored and hand-labeled evaluation dataset of 6 job descriptions and 10 resumes for fresher/early-career tech roles; it is intentionally small, and all requirement-presence and relevance labels were authored by the project developer independently of any matching method.",
+  "labelingGuidelines": [
+    "present = true iff the resume genuinely shows the candidate has the requirement, whether in SKILLS, PROJECTS, EXPERIENCE or INTERNSHIP; a skill claimed in the skills list counts.",
+    "Synonyms, aliases and paraphrases count: Postgres = PostgreSQL, Go = Golang, Mongo = MongoDB, K8s = Kubernetes, JS = JavaScript, Node = Node.js, sklearn = scikit-learn, \"built RESTful services\" = RESTful APIs, \"containerized the service\" = Docker, \"pipeline that builds, tests and deploys on every push\" = CI/CD.",
+    "A related-but-different technology does NOT count: MySQL does not satisfy PostgreSQL (or vice versa), JavaScript does not satisfy Java, React Native does not satisfy React, Docker does not satisfy Kubernetes, TensorFlow does not satisfy PyTorch, Tableau does not satisfy Power BI, Vitest does not satisfy Jest.",
+    "For backend \"RESTful APIs\" the candidate must have built/designed APIs; for the frontend \"REST API integration\" requirement, consuming/integrating REST APIs from a client is sufficient.",
+    "Generic database requirements (e.g. \"SQL\") are satisfied by any SQL dialect the candidate has used (MySQL, PostgreSQL, coursework SQL).",
+    "relevance: 2 = strong fit (has most mandatory requirements, including the core stack), 1 = partial fit (some mandatory requirements or clearly transferable adjacent experience), 0 = poor fit; judged holistically as a recruiter would, consistent with the requirement labels.",
+    "Labels were authored before and independently of running any matching method (keyword, TF-IDF, embeddings or ontology); no label was tuned to favour a method."
+  ],
+  "jobs": [
+    {
+      "id": "jd-frontend",
+      "title": "Frontend Developer",
+      "text": "Frontend Developer (Fresher / 0-1 years)\nWe are a product startup building a B2B analytics dashboard used by 2,000+ small businesses. You will work with designers and backend engineers to build fast, accessible user interfaces.\n\nResponsibilities:\n- Build reusable UI components and pages for our web dashboard\n- Integrate frontend screens with backend services and handle loading and error states\n- Participate in code reviews and fix UI bugs\n\nRequirements (must have):\n- Strong fundamentals in JavaScript (ES6+)\n- Hands-on experience building applications with React\n- Solid HTML and CSS, including responsive layouts\n- REST API integration (fetching, posting and handling data from backend endpoints)\n- Version control with Git\n\nPreferred (nice to have):\n- TypeScript\n- State management with Redux\n- Unit testing with Jest\n\nLocation: Pune (hybrid). Freshers with strong projects are encouraged to apply.",
+      "requirements": [
+        {
+          "id": "jd-frontend-r1",
+          "phrase": "React",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-frontend-r2",
+          "phrase": "JavaScript",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-frontend-r3",
+          "phrase": "HTML and CSS",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-frontend-r4",
+          "phrase": "TypeScript",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-frontend-r5",
+          "phrase": "REST API integration",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-frontend-r6",
+          "phrase": "Git",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-frontend-r7",
+          "phrase": "Redux",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-frontend-r8",
+          "phrase": "Jest",
+          "importance": "preferred"
+        }
+      ]
+    },
+    {
+      "id": "jd-backend-node",
+      "title": "Backend Developer (Node.js / Express)",
+      "text": "Backend Developer - Node.js / Express (Fresher)\nOur team builds the APIs behind a food-delivery logistics platform. You will design and maintain backend services consumed by our web and mobile apps.\n\nResponsibilities:\n- Design, build and document RESTful APIs\n- Model data and write efficient queries\n- Implement authentication and authorization\n- Write clean, reviewed code and debug production issues with senior engineers\n\nRequirements (must have):\n- Node.js and Express\n- Designing and building RESTful APIs\n- MongoDB (schema design, indexing, aggregation basics)\n- Git and pull-request based workflows\n\nPreferred (nice to have):\n- Experience with Postgres or another relational database\n- JWT authentication\n- Docker for local development and deployment\n\nLocation: Bengaluru (on-site). 0-1 years of experience; internships and personal projects count.",
+      "requirements": [
+        {
+          "id": "jd-backend-node-r1",
+          "phrase": "Node.js",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-backend-node-r2",
+          "phrase": "Express",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-backend-node-r3",
+          "phrase": "RESTful APIs",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-backend-node-r4",
+          "phrase": "MongoDB",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-backend-node-r5",
+          "phrase": "Postgres",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-backend-node-r6",
+          "phrase": "JWT authentication",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-backend-node-r7",
+          "phrase": "Docker",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-backend-node-r8",
+          "phrase": "Git",
+          "importance": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "jd-data-analyst",
+      "title": "Data Analyst",
+      "text": "Data Analyst (Entry Level)\nWe are a retail chain with 120 stores looking for an entry-level analyst to turn sales and inventory data into decisions.\n\nResponsibilities:\n- Write queries to extract and clean data from our data warehouse\n- Analyse sales trends, promotions and customer cohorts\n- Build and maintain dashboards for store and category managers\n- Present findings clearly to non-technical stakeholders\n\nRequirements (must have):\n- SQL (joins, aggregations, window functions)\n- Python for data analysis\n- Pandas for data cleaning and transformation\n- Power BI dashboards and reports\n- Microsoft Excel (pivot tables, lookups)\n\nPreferred (nice to have):\n- Tableau\n- Statistics (hypothesis testing, regression basics)\n\nLocation: Mumbai (hybrid). Graduates from any discipline with strong analytical projects are welcome.",
+      "requirements": [
+        {
+          "id": "jd-data-analyst-r1",
+          "phrase": "SQL",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-data-analyst-r2",
+          "phrase": "Python",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-data-analyst-r3",
+          "phrase": "Pandas",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-data-analyst-r4",
+          "phrase": "Power BI",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-data-analyst-r5",
+          "phrase": "Microsoft Excel",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-data-analyst-r6",
+          "phrase": "Tableau",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-data-analyst-r7",
+          "phrase": "Statistics",
+          "importance": "preferred"
+        }
+      ]
+    },
+    {
+      "id": "jd-java-backend",
+      "title": "Java Backend Developer (Spring Boot)",
+      "text": "Java Backend Developer - Spring Boot (Fresher)\nJoin our fintech engineering team building payment reconciliation services used by partner banks. You will be mentored by senior engineers and learn code-quality, security and production-support practices from day one.\n\nResponsibilities:\n- Develop and maintain backend microservices\n- Build RESTful APIs consumed by internal and partner systems\n- Write database queries and manage schema changes\n- Write unit tests and participate in code reviews\n\nRequirements (must have):\n- Core Java (OOP, collections, exceptions)\n- Spring Boot\n- Building RESTful APIs\n- MySQL (schema design, joins, indexing)\n- Git\n\nPreferred (nice to have):\n- Hibernate / JPA\n- Maven build tool\n- Unit testing with JUnit\n\nLocation: Hyderabad (on-site). 0-1 years of experience; strong academic or internship projects in Java are a plus.",
+      "requirements": [
+        {
+          "id": "jd-java-backend-r1",
+          "phrase": "Java",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-java-backend-r2",
+          "phrase": "Spring Boot",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-java-backend-r3",
+          "phrase": "RESTful APIs",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-java-backend-r4",
+          "phrase": "MySQL",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-java-backend-r5",
+          "phrase": "Hibernate",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-java-backend-r6",
+          "phrase": "Maven",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-java-backend-r7",
+          "phrase": "JUnit",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-java-backend-r8",
+          "phrase": "Git",
+          "importance": "mandatory"
+        }
+      ]
+    },
+    {
+      "id": "jd-ml-intern",
+      "title": "Machine Learning Engineer Intern",
+      "text": "Machine Learning Engineer Intern (6 months)\nOur applied AI team builds document-understanding models for insurance claims. As an intern you will help train, evaluate and ship models, working closely with research scientists and product engineers and presenting your experiment results in weekly reviews.\n\nResponsibilities:\n- Prepare datasets and build training and evaluation pipelines\n- Train and fine-tune models and track experiments\n- Compare classical baselines with neural models\n- Help package models for deployment\n\nRequirements (must have):\n- Python\n- PyTorch\n- scikit-learn\n- NumPy\n\nPreferred (nice to have):\n- Deep Learning (CNNs, transformers)\n- NLP experience (text classification, embeddings)\n- Git\n- Docker\n\nLocation: Remote (India). Final-year students and recent graduates may apply. Stipend provided; pre-placement offer possible based on performance.",
+      "requirements": [
+        {
+          "id": "jd-ml-intern-r1",
+          "phrase": "Python",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-ml-intern-r2",
+          "phrase": "PyTorch",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-ml-intern-r3",
+          "phrase": "scikit-learn",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-ml-intern-r4",
+          "phrase": "NumPy",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-ml-intern-r5",
+          "phrase": "Deep Learning",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-ml-intern-r6",
+          "phrase": "NLP",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-ml-intern-r7",
+          "phrase": "Git",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-ml-intern-r8",
+          "phrase": "Docker",
+          "importance": "preferred"
+        }
+      ]
+    },
+    {
+      "id": "jd-devops-intern",
+      "title": "DevOps / Cloud Intern",
+      "text": "DevOps / Cloud Intern\nWe run a SaaS platform on AWS and are looking for an intern to help automate infrastructure and deployments. You will be paired with a senior site reliability engineer and gain hands-on exposure to production systems.\n\nResponsibilities:\n- Containerize services and maintain deployment manifests\n- Build and improve CI/CD pipelines\n- Monitor environments and troubleshoot build and deployment failures\n- Document infrastructure and runbooks\n- Help reduce cloud costs by identifying and cleaning up unused resources\n\nRequirements (must have):\n- Docker\n- Kubernetes\n- AWS (EC2, S3, IAM basics)\n- CI/CD pipelines (GitHub Actions, Jenkins or GitLab CI)\n- Linux command line\n\nPreferred (nice to have):\n- Terraform\n- Bash scripting\n- GoLang for internal tooling\n\nLocation: Noida (hybrid). 6-month internship with possible full-time conversion.",
+      "requirements": [
+        {
+          "id": "jd-devops-intern-r1",
+          "phrase": "Docker",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-devops-intern-r2",
+          "phrase": "Kubernetes",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-devops-intern-r3",
+          "phrase": "AWS",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-devops-intern-r4",
+          "phrase": "CI/CD pipelines",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-devops-intern-r5",
+          "phrase": "Linux",
+          "importance": "mandatory"
+        },
+        {
+          "id": "jd-devops-intern-r6",
+          "phrase": "Terraform",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-devops-intern-r7",
+          "phrase": "Bash scripting",
+          "importance": "preferred"
+        },
+        {
+          "id": "jd-devops-intern-r8",
+          "phrase": "GoLang",
+          "importance": "preferred"
+        }
+      ]
+    }
+  ],
+  "resumes": [
+    {
+      "id": "res-01",
+      "summary": "Frontend fresher: React.js + TypeScript + Redux Toolkit, writes \"JS\" instead of JavaScript, consumes REST APIs; tests with Vitest (not Jest).",
+      "groundTruthSkills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Redux",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Vite",
+        "Vitest",
+        "React Testing Library",
+        "REST API integration",
+        "Git",
+        "Figma",
+        "Responsive design",
+        "Accessibility"
+      ],
+      "text": "Aarav Mehta\nSUMMARY\nFinal-year B.Tech (IT) student focused on frontend development. I enjoy turning Figma designs into fast, accessible web apps.\n\nEDUCATION\nB.Tech in Information Technology, Pune Institute of Engineering, 2022-2026, CGPA 8.4\n\nSKILLS\nJS (ES6+), TypeScript, React.js, Redux Toolkit, HTML5, CSS3, Tailwind CSS, Vite, Vitest, Git/GitHub, Figma\n\nPROJECTS\nExpense Tracker Dashboard\n- Built a single-page app with React.js and TypeScript to track and categorise expenses\n- Managed global state with Redux Toolkit and memoized selectors\n- Integrated REST APIs with Axios, including pagination and error handling\n- Wrote component tests with Vitest and React Testing Library\nMovie Explorer\n- Responsive movie search app using HTML5, CSS3 Flexbox/Grid and vanilla JS\n- Consumed the TMDB public API and cached results in localStorage\n\nINTERNSHIP\nFrontend Intern, PixelCraft Studio (Jan 2025 - Jun 2025)\n- Converted 15+ Figma screens into reusable React components with Tailwind CSS\n- Improved Lighthouse accessibility score from 72 to 95\n- Used Git feature branches and pull requests for all changes"
+    },
+    {
+      "id": "res-02",
+      "summary": "MERN fresher: writes \"Node\" and \"Mongo\" (aliases), \"built RESTful services\", JWT; deployed on AWS EC2 Ubuntu; no TypeScript/Redux/Docker/Postgres.",
+      "groundTruthSkills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "HTML",
+        "CSS",
+        "RESTful APIs",
+        "REST API integration",
+        "JWT authentication",
+        "Postman",
+        "Git",
+        "Linux",
+        "AWS",
+        "Nginx"
+      ],
+      "text": "Priya Sharma\nSUMMARY\nMERN stack developer (fresher) who has built and deployed full-stack web apps end to end.\n\nEDUCATION\nB.E. Computer Engineering, Gujarat Technological University, 2021-2025, CGPA 8.1\n\nSKILLS\nJavaScript, React, Node, Express.js, Mongo (Mongoose), HTML, CSS, JWT, Postman, Git, Ubuntu, AWS EC2\n\nPROJECTS\nShopEasy - E-commerce Platform\n- Built RESTful services in Express.js for products, carts and orders (25+ endpoints)\n- Designed Mongo collections with Mongoose schemas and indexes\n- Implemented login and role-based access using JWT tokens\n- React frontend with Context API for cart state; consumed the backend APIs with fetch\n- Deployed the Node server on an AWS EC2 Ubuntu instance behind Nginx\nDevConnect - Developer Social Network\n- Full-stack app with React, Node and Mongo; profile, posts and comments features\n- Styled pages with plain HTML and CSS media queries\n\nINTERNSHIP\nWeb Development Intern, CodeNest Solutions (May 2024 - Jul 2024)\n- Added pagination and search endpoints to an existing Express API\n- Fixed 20+ bugs reported in the React admin panel\n- Collaborated using Git and GitHub pull requests"
+    },
+    {
+      "id": "res-03",
+      "summary": "Entry-level data analyst: SQL via MySQL, Python/Pandas, Power BI, Excel, statistics; no Tableau, no Git, no ML frameworks.",
+      "groundTruthSkills": [
+        "SQL",
+        "MySQL",
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Power BI",
+        "DAX",
+        "Power Query",
+        "Microsoft Excel",
+        "Statistics",
+        "A/B testing",
+        "Data cleaning",
+        "Dashboards"
+      ],
+      "text": "Sneha Iyer\nSUMMARY\nStatistics graduate and aspiring data analyst with internship experience building sales dashboards.\n\nEDUCATION\nB.Sc. Statistics, University of Mumbai, 2021-2024, CGPA 8.6\nGoogle Data Analytics Professional Certificate (2024)\n\nSKILLS\nSQL (MySQL), Python, Pandas, NumPy, Matplotlib, Seaborn, Power BI (DAX, Power Query), Advanced Excel (pivot tables, VLOOKUP/XLOOKUP), Statistics (hypothesis testing, regression)\n\nPROJECTS\nRetail Sales Analysis\n- Cleaned 500k rows of transaction data with Pandas and NumPy\n- Wrote MySQL queries with joins and window functions to compute monthly KPIs\n- Ran an A/B test on discount campaigns using t-tests\nHR Attrition Dashboard\n- Built an interactive Power BI dashboard with DAX measures for attrition by department\n- Presented insights to a panel of faculty and HR professionals\n\nINTERNSHIP\nData Analyst Intern, BrightMart Retail (Jan 2024 - Jun 2024)\n- Automated weekly sales reports in Excel using pivot tables, reducing manual work by 6 hours/week\n- Built Power BI reports for 40 store managers\n- Wrote SQL queries against the sales database to answer ad-hoc business questions"
+    },
+    {
+      "id": "res-04",
+      "summary": "Java/Spring Boot fresher: Hibernate, Maven, JUnit, \"developed REST endpoints\", JWT; uses PostgreSQL (NOT MySQL); basic Docker.",
+      "groundTruthSkills": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "Hibernate",
+        "JPA",
+        "PostgreSQL",
+        "SQL",
+        "Maven",
+        "JUnit",
+        "Mockito",
+        "RESTful APIs",
+        "JWT authentication",
+        "Docker",
+        "Git",
+        "Postman",
+        "Flyway"
+      ],
+      "text": "Rohan Verma\nSUMMARY\nJava backend developer (fresher) with internship experience building Spring Boot microservices.\n\nEDUCATION\nB.Tech Computer Science, VIT Vellore, 2022-2026, CGPA 8.7\n\nSKILLS\nJava 17, Spring Boot, Spring Security, Hibernate (JPA), PostgreSQL, Maven, JUnit 5, Mockito, Git, Docker (basic), Postman\n\nPROJECTS\nLibrary Management API\n- Developed REST endpoints with Spring Boot for books, members and loans\n- Persisted entities with Hibernate on a PostgreSQL database; wrote Flyway migrations\n- Secured endpoints with Spring Security and JWT-based authentication\n- Achieved 80% test coverage with JUnit 5 and Mockito\nOnline Quiz Service\n- Spring Boot service exposing quiz and scoring endpoints consumed by an Android client\n- Built and packaged with Maven; ran locally with Docker Compose\n\nINTERNSHIP\nBackend Intern, FinEdge Technologies (Jun 2025 - Aug 2025)\n- Implemented a transaction search endpoint with pagination and filtering in Java\n- Optimised slow PostgreSQL queries by adding indexes\n- Followed Git flow with code reviews"
+    },
+    {
+      "id": "res-05",
+      "summary": "ML fresher: PyTorch CNN, writes \"sklearn\" (alias), NumPy, BERT/NLP, Docker-containerized demo; no SQL/BI.",
+      "groundTruthSkills": [
+        "Python",
+        "PyTorch",
+        "scikit-learn",
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
+        "Deep Learning",
+        "CNN",
+        "Transfer learning",
+        "NLP",
+        "Hugging Face Transformers",
+        "BERT",
+        "OpenCV",
+        "Jupyter",
+        "Git",
+        "Docker",
+        "Gradio",
+        "Statistics"
+      ],
+      "text": "Karan Singh\nSUMMARY\nFinal-year student passionate about machine learning, deep learning and NLP.\n\nEDUCATION\nB.Tech Computer Science (AI & ML), SRM University, 2022-2026, CGPA 9.0\nCoursework: Probability and Statistics, Linear Algebra, Machine Learning, Deep Learning\n\nSKILLS\nPython, PyTorch, sklearn, NumPy, Pandas, Matplotlib, Hugging Face Transformers, OpenCV, Jupyter, Git\n\nPROJECTS\nPlant Disease Classifier\n- Trained a CNN in PyTorch on 50k leaf images, reaching 94% validation accuracy\n- Used transfer learning with ResNet-50 and data augmentation\nSentiment Analysis of Product Reviews\n- Compared logistic regression and random forest baselines in sklearn with a fine-tuned BERT model\n- Cleaned and tokenised text with Pandas and Hugging Face tokenizers\n- Built a Gradio demo and containerized it with Docker\n\nINTERNSHIP\nResearch Intern, IIT Madras AI Lab (May 2025 - Jul 2025)\n- Implemented evaluation scripts in NumPy for an object detection benchmark\n- Tracked experiments and versioned code with Git\n\nACHIEVEMENTS\n- Top 10% finish in a Kaggle image classification competition\n- Wrote a blog series explaining attention mechanisms for beginners"
+    },
+    {
+      "id": "res-06",
+      "summary": "DevOps fresher with Java background: Docker, Kubernetes, AWS, Terraform, Bash; CI/CD described as a Jenkins pipeline (paraphrase); also Spring Boot + MySQL + Maven; no Go.",
+      "groundTruthSkills": [
+        "Linux",
+        "Bash scripting",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "EC2",
+        "S3",
+        "IAM",
+        "Jenkins",
+        "GitHub Actions",
+        "CI/CD pipelines",
+        "Terraform",
+        "Java",
+        "Spring Boot",
+        "RESTful APIs",
+        "MySQL",
+        "SQL",
+        "Maven",
+        "Python",
+        "Git"
+      ],
+      "text": "Vikram Nair\nSUMMARY\nDevOps-focused fresher with a Java background; I like automating builds and running services on the cloud.\n\nEDUCATION\nB.E. Information Technology, Anna University, 2021-2025, CGPA 8.0\nAWS Certified Cloud Practitioner (2024)\n\nSKILLS\nLinux (Ubuntu), Bash, Docker, Kubernetes (minikube, kubectl), AWS (EC2, S3, IAM), Jenkins, GitHub Actions, Terraform, Java, Spring Boot, MySQL, Maven, Python, Git\n\nPROJECTS\nAutomated Deployment of an Inventory Service\n- Built a Spring Boot REST API for inventory with a MySQL database, packaged using Maven\n- Wrote a Dockerfile and Kubernetes deployment and service manifests\n- Set up a Jenkins pipeline that builds, tests and deploys the service on every push\n- Provisioned EC2 instances and an S3 bucket with Terraform\nServer Health Monitor\n- Bash and Python scripts that collect CPU, memory and disk metrics from Linux servers and send alerts\n\nINTERNSHIP\nCloud Operations Intern, Skyline Infotech (Jan 2025 - Jun 2025)\n- Migrated two internal apps to GitHub Actions workflows\n- Managed user access with AWS IAM roles and policies\n- Maintained Git repositories and release tags"
+    },
+    {
+      "id": "res-07",
+      "summary": "Go backend fresher: lists \"Go\" (alias of GoLang), \"Postgres\", \"K8s\", \"Containers\"/\"containerized\" (Docker paraphrase), \"built RESTful services\", GitHub Actions workflow (CI/CD paraphrase), AWS EKS.",
+      "groundTruthSkills": [
+        "Go",
+        "Python",
+        "SQL",
+        "PostgreSQL",
+        "Redis",
+        "gRPC",
+        "Gin",
+        "RESTful APIs",
+        "JWT authentication",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "GitHub Actions",
+        "CI/CD pipelines",
+        "Linux",
+        "Bash scripting",
+        "Git",
+        "Microservices"
+      ],
+      "text": "Ananya Rao\nSUMMARY\nBackend developer (fresher) working mainly in Go, with interest in distributed systems and cloud infrastructure.\n\nEDUCATION\nB.Tech Computer Science, NIT Trichy, 2021-2025, CGPA 8.5\n\nSKILLS\nGo, Python, SQL, Postgres, Redis, gRPC, Gin, Containers, K8s, GitHub Actions, AWS (EC2, EKS), Linux, Bash, Git\n\nPROJECTS\nURL Shortener Service\n- Built RESTful services in Go using the Gin framework with rate limiting backed by Redis\n- Stored links and click analytics in Postgres; wrote SQL migrations\n- Added token-based login using JWT\nOrder Processing Microservices\n- Two Go services communicating over gRPC\n- Containerized each service with a multi-stage build and deployed them to a K8s cluster on AWS EKS\n- GitHub Actions workflow runs tests, builds images and deploys on every merge to main\n\nINTERNSHIP\nSoftware Engineering Intern, CloudKite (Jan 2025 - Jun 2025)\n- Wrote Bash scripts to automate log rotation on Linux servers\n- Built an internal CLI tool in Go for managing staging environments\n- Reviewed pull requests on GitHub and maintained Git hygiene"
+    },
+    {
+      "id": "res-08",
+      "summary": "React Native mobile fresher: TypeScript, Redux, Jest; built a Node.js/Express/MongoDB REST backend; no React (web) and no HTML/CSS; Firebase auth (no JWT).",
+      "groundTruthSkills": [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "TypeScript",
+        "Redux",
+        "Jest",
+        "Firebase",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "RESTful APIs",
+        "REST API integration",
+        "Git",
+        "Android Studio",
+        "Mobile development"
+      ],
+      "text": "Meera Joshi\nSUMMARY\nMobile app developer (fresher) building cross-platform apps with React Native.\n\nEDUCATION\nB.Sc. Computer Science, Christ University, 2022-2025, CGPA 8.3\n\nSKILLS\nReact Native, Expo, JavaScript, TypeScript, Redux, Jest, Firebase, Node.js, Express, MongoDB, Git, Android Studio\n\nPROJECTS\nFitTrack - Fitness Tracking App\n- Cross-platform React Native app (TypeScript) with workout logging and progress charts\n- Global state managed with Redux; unit tests written with Jest\n- Push notifications and authentication with Firebase\nCampusEats - Canteen Ordering App\n- React Native app for pre-ordering canteen meals\n- Built the backend REST API with Node.js and Express, storing orders in MongoDB\n- Integrated the app with the API using Axios\n\nINTERNSHIP\nMobile Developer Intern, AppSprout (Jun 2024 - Dec 2024)\n- Shipped 3 releases of a React Native e-commerce app to the Play Store\n- Fixed layout issues across Android screen sizes\n- Used Git branching and code reviews\n\nACHIEVEMENTS\n- FitTrack crossed 1,000 downloads on the Play Store\n- Winner, college app-development hackathon 2024"
+    },
+    {
+      "id": "res-09",
+      "summary": "Weak generic BCA profile: C/C++, \"Java (basics)\", HTML/CSS static page, SQL coursework, MS Excel data entry; no Git, no frameworks, no real projects.",
+      "groundTruthSkills": [
+        "C",
+        "C++",
+        "Java",
+        "HTML",
+        "CSS",
+        "SQL",
+        "Microsoft Excel",
+        "Microsoft Word",
+        "Microsoft PowerPoint",
+        "Communication",
+        "Teamwork"
+      ],
+      "text": "Rahul Kumar\nSUMMARY\nHardworking and motivated BCA graduate looking for an opportunity to grow in a reputed IT company and learn new technologies.\n\nEDUCATION\nBachelor of Computer Applications, Local Degree College, 2021-2024, 62%\n\nSKILLS\nC, C++, Java (basics), HTML, CSS, SQL (DBMS coursework), MS Office (Word, Excel, PowerPoint), Communication, Teamwork\n\nPROJECTS\nStudent Record System\n- Console program in C++ to add, update and delete student records using file handling\n- Academic mini project submitted in 5th semester\nPersonal Web Page\n- Static web page made with HTML and CSS about my hobbies\n\nEXPERIENCE\nData Entry Operator, Sai Enterprises (Jul 2024 - Present)\n- Entering invoices and customer details in Excel sheets\n- Preparing weekly reports for the manager\n- Maintaining stock registers and answering customer phone calls\n\nACHIEVEMENTS\n- Participated in college tech fest quiz\n- Certificate in Basic Computer Course\n\nLANGUAGES\nEnglish, Hindi, Bhojpuri\n\nHOBBIES\nCricket, listening to music, internet browsing"
+    },
+    {
+      "id": "res-10",
+      "summary": "Mixed data/ML profile: SQL on PostgreSQL, Pandas, scikit-learn, TensorFlow/Keras (NOT PyTorch), Tableau (NOT Power BI), Excel, statistics; only basic JavaScript (NOT Java).",
+      "groundTruthSkills": [
+        "Python",
+        "SQL",
+        "PostgreSQL",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "TensorFlow",
+        "Keras",
+        "Deep Learning",
+        "CNN",
+        "Tableau",
+        "Microsoft Excel",
+        "Statistics",
+        "JavaScript",
+        "Git",
+        "Jupyter",
+        "Feature engineering"
+      ],
+      "text": "Ishaan Gupta\nSUMMARY\nData science enthusiast with experience in both analytics and machine learning; comfortable moving from SQL dashboards to predictive models.\n\nEDUCATION\nB.Tech Electronics and Communication, Delhi Technological University, 2021-2025, CGPA 8.2\nMinor in Data Science\n\nSKILLS\nPython, SQL (PostgreSQL), Pandas, NumPy, scikit-learn, TensorFlow, Keras, Tableau, Excel, Statistics, JavaScript (basic), Git, Jupyter\n\nPROJECTS\nCustomer Churn Prediction\n- Built gradient boosting and logistic regression models with scikit-learn (AUC 0.87)\n- Engineered features from PostgreSQL tables using SQL window functions and Pandas\n- Explained model drivers to stakeholders with a Tableau dashboard\nHandwritten Digit Recognition\n- Trained a convolutional neural network in TensorFlow/Keras on MNIST (99.1% accuracy)\n- Vectorised preprocessing with NumPy\nPortfolio Website\n- Personal site with basic JavaScript animations, hosted on GitHub Pages\n\nINTERNSHIP\nBusiness Analyst Intern, Zenith Consulting (Jun 2024 - Aug 2024)\n- Built Excel models with pivot tables to forecast quarterly demand\n- Applied hypothesis testing to evaluate a pricing experiment\n- Versioned analysis notebooks with Git"
+    }
+  ],
+  "requirementLabels": [
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-09",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r1",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r2",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r3",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r4",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r5",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r6",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r7",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-frontend",
+      "requirementId": "jd-frontend-r8",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r1",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r2",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r3",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r4",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r5",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r6",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r7",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-backend-node",
+      "requirementId": "jd-backend-node-r8",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-09",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-09",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r1",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r2",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r3",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r4",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r5",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r6",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "requirementId": "jd-data-analyst-r7",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-09",
+      "present": true
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r1",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r2",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r3",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r4",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r5",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r6",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r7",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-java-backend",
+      "requirementId": "jd-java-backend-r8",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-01",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-03",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-08",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r1",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r2",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r3",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r4",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r5",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r6",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r7",
+      "resumeId": "res-10",
+      "present": true
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "requirementId": "jd-ml-intern-r8",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-01",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-02",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-02",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-03",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-04",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-04",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-05",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-05",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-06",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-06",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-07",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-07",
+      "present": true
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-08",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-09",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r1",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r2",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r3",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r4",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r5",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r6",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r7",
+      "resumeId": "res-10",
+      "present": false
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "requirementId": "jd-devops-intern-r8",
+      "resumeId": "res-10",
+      "present": false
+    }
+  ],
+  "relevanceLabels": [
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-01",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-02",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-03",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-04",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-05",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-06",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-07",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-08",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-frontend",
+      "resumeId": "res-10",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-01",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-02",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-03",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-04",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-05",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-06",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-07",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-08",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-backend-node",
+      "resumeId": "res-10",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-01",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-02",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-03",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-04",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-05",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-06",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-07",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-08",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-data-analyst",
+      "resumeId": "res-10",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-01",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-02",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-03",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-04",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-05",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-06",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-07",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-08",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-java-backend",
+      "resumeId": "res-10",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-01",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-02",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-03",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-04",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-05",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-06",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-07",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-08",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-ml-intern",
+      "resumeId": "res-10",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-01",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-02",
+      "relevance": 1
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-03",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-04",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-05",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-06",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-07",
+      "relevance": 2
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-08",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-09",
+      "relevance": 0
+    },
+    {
+      "jobId": "jd-devops-intern",
+      "resumeId": "res-10",
+      "relevance": 0
+    }
+  ]
+}
