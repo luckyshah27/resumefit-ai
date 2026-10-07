@@ -32,7 +32,7 @@ The NLP components are described in more detail in [AI Pipeline](ai-pipeline.md)
 
 ## Skill Ontology and Evidence-Graded Matching
 
-A curated ontology of approximately 150 skills maps surface phrases (aliases) to canonical skills, records implied skills, and defines groups of related skills with a similarity value. Each resume skill records where it was found, and its evidence strength is graded HIGH, MEDIUM or LOW.
+A curated ontology of 141 skills maps surface phrases (aliases) to canonical skills, records implied skills, and defines groups of related skills with a similarity value. Each resume skill records where it was found, and its evidence strength is graded HIGH, MEDIUM or LOW.
 
 | Match state | Meaning | Credit |
 |-------------|---------|--------|

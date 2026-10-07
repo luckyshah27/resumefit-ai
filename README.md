@@ -155,7 +155,7 @@ Hostinger (VPS or Node.js hosting), MongoDB Atlas, HTTPS and the post-deploy che
 
 ## Limitations
 
-Rule-based section detection can mis-read unusual layouts; scanned resumes are rejected rather than OCR'd; the skill ontology (~150 skills) has gaps; scoring weights are expert-set rather than learned from hiring outcomes; ATS Readiness is an estimate; the research dataset is small, synthetic and single-annotator. Full list: [docs/limitations.md](docs/limitations.md) · Future work: [docs/future-scope.md](docs/future-scope.md).
+Rule-based section detection can mis-read unusual layouts; scanned resumes are rejected rather than OCR'd; the skill ontology (141 skills) has gaps; scoring weights are expert-set rather than learned from hiring outcomes; ATS Readiness is an estimate; the research dataset is small, synthetic and single-annotator. Full list: [docs/limitations.md](docs/limitations.md) · Future work: [docs/future-scope.md](docs/future-scope.md).
 
 ## Documentation index
 

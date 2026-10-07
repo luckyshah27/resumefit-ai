@@ -57,7 +57,8 @@ export const validateEnv = () => {
     if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) problems.push('JWT_SECRET must be set to a random string of at least 32 characters in production.');
     if (!process.env.MONGO_URI) problems.push('MONGO_URI must be set in production.');
     if (env.demoMode) problems.push('DEMO_MODE cannot be enabled in production.');
-    if (env.cookieSameSite === 'none' && !env.cookieSecure) problems.push('COOKIE_SAMESITE=none requires COOKIE_SECURE=true.');
+    // Session cookies must never travel over plain HTTP in production (serve the app over HTTPS).
+    if (!env.cookieSecure) problems.push('COOKIE_SECURE=false is not allowed in production; serve the app over HTTPS and remove the override.');
     if (env.clamavRequired && !env.clamavHost) problems.push('CLAMAV_REQUIRED=true requires CLAMAV_HOST.');
   }
   return problems;

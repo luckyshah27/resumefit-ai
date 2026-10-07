@@ -12,8 +12,8 @@ This section records the known limitations of ResumeFit AI as implemented (scori
 
 ## Skill Ontology
 
-- The ontology contains approximately 150 skills, so coverage is incomplete. Skills outside it cannot be matched as canonical skills.
-- Two concrete gaps were observed during the research error analysis: **Maven** is missing, and **MySQL does not imply the generic skill "SQL"**. These were deliberately **not** fixed after the test data had been seen, so that the reported results are not tuned to the evaluation set.
+- The ontology contains 141 skills, so coverage is incomplete. Skills outside it cannot be matched as canonical skills.
+- The research error analysis (see [research](research.md)) found concrete ontology gaps: a specific SQL database (MySQL, PostgreSQL) does **not imply the generic skill "SQL"** (2 missed labels), the phrase "JWT authentication" requires both JWT and authentication evidence (2 missed labels), and "REST API" requirements cannot tell *building* APIs from *consuming* them (5 false positives). **Maven** is also absent from the ontology; it caused no error only because requirements outside the ontology fall back to literal keyword matching. None of these were fixed after the test data had been seen, so the reported results are not tuned to the evaluation set.
 - Related-skill similarity values were set by hand.
 
 ## Scoring

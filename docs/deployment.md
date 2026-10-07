@@ -37,7 +37,7 @@ The server reads configuration from environment variables (`server/src/config/en
 | `TRUST_PROXY` | `0` | **Yes behind a proxy** (`1`) | Number of reverse proxies in front of Node. Needed so `req.ip` (rate limiting, audit log) is the real client IP rather than the proxy's. Set to `1` behind NGINX or a hosting platform proxy. |
 | `ACCESS_TOKEN_TTL` | `15m` | No | Lifetime of the JWT access token (a `jsonwebtoken` duration such as `15m`). Keep it short. |
 | `REFRESH_TOKEN_TTL_DAYS` | `30` | No | Lifetime of the rotating refresh token and its cookie, in days. |
-| `COOKIE_SECURE` | `true` in production, `false` otherwise | No (leave default) | Sets the `Secure` flag on the refresh cookie. Only set `false` for local HTTP testing. |
+| `COOKIE_SECURE` | `true` in production, `false` otherwise | No (leave default) | Sets the `Secure` flag on the refresh cookie. `false` is only for local HTTP testing; the server refuses to start in production with `COOKIE_SECURE=false`, so remove that line from a copied `.env`. |
 | `COOKIE_SAMESITE` | `strict` | No | `strict`, `lax` or `none`. Keep `strict` for single-origin. `none` is only for split-origin and requires `COOKIE_SECURE=true` (validated at start-up). |
 | `ANTHROPIC_API_KEY` | empty | No | Enables the optional AI wording feature in "Fix My Resume". Server-side only. Without it, all scoring and deterministic suggestions work unchanged. |
 | `CLAMAV_HOST` | empty | Recommended | Host of a ClamAV `clamd` daemon for upload scanning. Empty disables scanning. |

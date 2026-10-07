@@ -5,7 +5,7 @@ The items below are **proposed future work**. None of them is implemented in the
 | # | Proposed enhancement | Motivation |
 |---|----------------------|------------|
 | 1 | OCR for scanned resumes | Scanned and image-only PDFs are currently rejected. |
-| 2 | Data-driven ontology expansion using embeddings | The ontology covers about 150 skills and has known gaps. |
+| 2 | Data-driven ontology expansion using embeddings | The ontology covers 141 skills and has known gaps. |
 | 3 | Calibrating weights against real hiring outcomes, with consent | Current weights are expert-set. |
 | 4 | Larger, multi-annotator evaluation dataset with inter-annotator agreement | The current dataset is small, synthetic and single-annotator. |
 | 5 | Multilingual support | Only English resumes are supported. |

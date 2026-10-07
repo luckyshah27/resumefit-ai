@@ -55,8 +55,11 @@ const profileSchema = z.object({
     .optional(),
 });
 
+/** bcrypt cost factor for every password hash. The dummy hash must use the same cost to equalise timing. */
+export const BCRYPT_COST = 12;
+
 /** Used to keep login timing identical for unknown emails (prevents account enumeration by timing). */
-const DUMMY_HASH = bcrypt.hashSync('resumefit-timing-equaliser', 10);
+const DUMMY_HASH = bcrypt.hashSync('resumefit-timing-equaliser', BCRYPT_COST);
 
 /** Starts a session: short-lived access token in the body, rotating refresh token in an httpOnly cookie. */
 const startSession = async (req: Request, res: Response, user: IUser, status = 200) => {
@@ -90,7 +93,7 @@ authRouter.post(
     if (await UserModel.exists({ email: email.toLowerCase() })) {
       return res.status(409).json({ message: 'An account with this email already exists' });
     }
-    const passwordHash = await bcrypt.hash(password, 12);
+    const passwordHash = await bcrypt.hash(password, BCRYPT_COST);
     const user = await UserModel.create({ name, email, passwordHash, targetRole: targetRole || 'Software Engineer' });
     audit(req, 'auth.register', {}, String(user._id));
     return startSession(req, res, user, 201);
@@ -188,7 +191,7 @@ authRouter.post(
       return res.status(400).json({ message: 'New password must be different from your current password.' });
     }
 
-    user.passwordHash = await bcrypt.hash(parsed.data.newPassword, 12);
+    user.passwordHash = await bcrypt.hash(parsed.data.newPassword, BCRYPT_COST);
     await user.save();
     await revokeAllForUser(req.user!.id);
     res.clearCookie(REFRESH_COOKIE, { ...refreshCookieOptions(), maxAge: undefined });
